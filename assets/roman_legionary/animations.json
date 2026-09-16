@@ -1,0 +1,257 @@
+{
+  "name": "roman_legionary",
+  "source": "Gemini concept sheet processed for Grok Build",
+  "canvas": {
+    "w": 344,
+    "h": 320
+  },
+  "anchor": {
+    "x": 0.5,
+    "y": 1.0
+  },
+  "animations": {
+    "idle_front": {
+      "frames": [
+        "idle_front"
+      ],
+      "frameDurationMs": 400,
+      "loop": true,
+      "strip": {
+        "file": "strips/idle_front.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 1,
+        "names": [
+          "idle_front"
+        ]
+      }
+    },
+    "idle_back": {
+      "frames": [
+        "idle_back"
+      ],
+      "frameDurationMs": 400,
+      "loop": true,
+      "strip": {
+        "file": "strips/idle_back.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 1,
+        "names": [
+          "idle_back"
+        ]
+      }
+    },
+    "idle_left": {
+      "frames": [
+        "idle_left"
+      ],
+      "frameDurationMs": 400,
+      "loop": true,
+      "strip": {
+        "file": "strips/idle_left.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 1,
+        "names": [
+          "idle_left"
+        ]
+      }
+    },
+    "idle_right": {
+      "frames": [
+        "idle_right"
+      ],
+      "frameDurationMs": 400,
+      "loop": true,
+      "strip": {
+        "file": "strips/idle_right.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 1,
+        "names": [
+          "idle_right"
+        ]
+      }
+    },
+    "walk_front": {
+      "frames": [
+        "walk_front_0",
+        "walk_front_1",
+        "walk_front_2",
+        "walk_front_3"
+      ],
+      "frameDurationMs": 120,
+      "loop": true,
+      "strip": {
+        "file": "strips/walk_front.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 4,
+        "names": [
+          "walk_front_0",
+          "walk_front_1",
+          "walk_front_2",
+          "walk_front_3"
+        ]
+      }
+    },
+    "walk_back": {
+      "frames": [
+        "walk_back_0",
+        "walk_back_1",
+        "walk_back_2",
+        "walk_back_3"
+      ],
+      "frameDurationMs": 120,
+      "loop": true,
+      "strip": {
+        "file": "strips/walk_back.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 4,
+        "names": [
+          "walk_back_0",
+          "walk_back_1",
+          "walk_back_2",
+          "walk_back_3"
+        ]
+      }
+    },
+    "walk_left": {
+      "frames": [
+        "walk_left_0",
+        "walk_left_1",
+        "walk_left_2",
+        "walk_left_3"
+      ],
+      "frameDurationMs": 120,
+      "loop": true,
+      "strip": {
+        "file": "strips/walk_left.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 4,
+        "names": [
+          "walk_left_0",
+          "walk_left_1",
+          "walk_left_2",
+          "walk_left_3"
+        ]
+      }
+    },
+    "walk_right": {
+      "frames": [
+        "walk_right_0",
+        "walk_right_1",
+        "walk_right_2",
+        "walk_right_3"
+      ],
+      "frameDurationMs": 120,
+      "loop": true,
+      "strip": {
+        "file": "strips/walk_right.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 4,
+        "names": [
+          "walk_right_0",
+          "walk_right_1",
+          "walk_right_2",
+          "walk_right_3"
+        ]
+      }
+    },
+    "attack": {
+      "frames": [
+        "attack_21",
+        "attack_22",
+        "attack_23",
+        "attack_24"
+      ],
+      "frameDurationMs": 90,
+      "loop": false,
+      "strip": {
+        "file": "strips/attack.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 4,
+        "names": [
+          "attack_21",
+          "attack_22",
+          "attack_23",
+          "attack_24"
+        ]
+      }
+    },
+    "hurt": {
+      "frames": [
+        "hurt_25",
+        "hurt_26"
+      ],
+      "frameDurationMs": 140,
+      "loop": false,
+      "strip": {
+        "file": "strips/hurt.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 2,
+        "names": [
+          "hurt_25",
+          "hurt_26"
+        ]
+      }
+    },
+    "death": {
+      "frames": [
+        "death_27",
+        "death_28",
+        "corpse_29"
+      ],
+      "frameDurationMs": 160,
+      "loop": false,
+      "strip": {
+        "file": "strips/death.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 3,
+        "names": [
+          "death_27",
+          "death_28",
+          "corpse_29"
+        ]
+      }
+    },
+    "corpse": {
+      "frames": [
+        "corpse_29",
+        "corpse_30"
+      ],
+      "frameDurationMs": 800,
+      "loop": true,
+      "strip": {
+        "file": "strips/corpse.png",
+        "frame_w": 344,
+        "frame_h": 320,
+        "frames": 2,
+        "names": [
+          "corpse_29",
+          "corpse_30"
+        ]
+      }
+    }
+  },
+  "projectiles": [
+    "projectile_spear"
+  ],
+  "fx": [
+    "dust_back_0",
+    "dust_back_1",
+    "dust_back_2",
+    "dust_back_3",
+    "dust_front_0",
+    "dust_front_1",
+    "dust_front_2",
+    "dust_front_3"
+  ]
+}

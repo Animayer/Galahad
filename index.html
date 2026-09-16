@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Hold the Line — Galahad</title>
+    <meta name="description" content="Hold the line. If the line holds, we argue later." />
+    <link rel="icon" href="assets/roman_legionary/frames_96/idle_front.png" type="image/png" />
+    <link rel="stylesheet" href="css/game.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="mast">
+        <p class="eyebrow">Galahad · v0.1</p>
+        <h1>Hold the Line</h1>
+        <p class="pitch">Hold the line. If the line holds, we argue later.</p>
+      </header>
+
+      <div id="stage">
+        <canvas id="game" width="960" height="540" aria-label="Hold the Line arena"></canvas>
+
+        <div id="hud" hidden>
+          <div class="hud-block">
+            <span class="label">Time</span>
+            <span id="hud-time">0:45</span>
+          </div>
+          <div class="hud-block">
+            <span class="label">Crest</span>
+            <span id="hud-hp" aria-label="Hit points"></span>
+          </div>
+          <div class="hud-block">
+            <span class="label">Down</span>
+            <span id="hud-kills">0</span>
+          </div>
+        </div>
+
+        <div id="overlay" class="panel">
+          <p class="panel-kicker" id="overlay-kicker">Night watch</p>
+          <h2 id="overlay-title">The line is yours.</h2>
+          <p class="panel-body" id="overlay-body">
+            Forty-five seconds. Fifteen raiders. Crest high. Eyes forward.
+          </p>
+          <p class="panel-score" id="overlay-score" hidden></p>
+          <button type="button" id="start-btn">Hold</button>
+          <p class="controls-hint">
+            WASD or arrows to move · Space, click, or tap to strike
+          </p>
+        </div>
+      </div>
+
+      <div id="pad" hidden>
+        <div class="dpad" aria-label="Move">
+          <button type="button" data-dir="up" aria-label="Up">▲</button>
+          <div class="dpad-mid">
+            <button type="button" data-dir="left" aria-label="Left">◀</button>
+            <button type="button" data-dir="right" aria-label="Right">▶</button>
+          </div>
+          <button type="button" data-dir="down" aria-label="Down">▼</button>
+        </div>
+        <button type="button" id="atk-btn" aria-label="Strike">Strike</button>
+      </div>
+    </div>
+    <script type="module" src="js/game.js"></script>
+  </body>
+</html>
