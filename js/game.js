@@ -4,12 +4,12 @@ const ANIM_URL = "assets/roman_legionary/animations.json";
 const WIN_SECONDS = 45;
 const WIN_KILLS = 15;
 const PLAYER_HP = 5;
-const PLAYER_SPEED = 148;
-const SPRITE_SCALE = 1.7;
-const ATTACK_REACH = 62;
-const ATTACK_HALF_WIDTH = 28;
+const PLAYER_SPEED = 156;
+const SPRITE_SCALE = 2;
+const ATTACK_REACH = 70;
+const ATTACK_HALF_WIDTH = 32;
 const PLAYER_RADIUS = 16;
-const HURT_IFRAMES_MS = 720;
+const HURT_IFRAMES_MS = 900;
 const HIT_FRAME_START = 1;
 const HIT_FRAME_END = 2;
 
@@ -208,8 +208,8 @@ function spawnEnemy() {
     x,
     y,
     hp: 1,
-    r: 13,
-    speed: 46 + wave * 8 + Math.random() * 10,
+    r: 17,
+    speed: 38 + wave * 6 + Math.random() * 8,
     hitFlash: 0,
     id: Math.random().toString(36).slice(2),
   });
@@ -328,12 +328,12 @@ function updatePlay(dt) {
   }
 
   player.hurtCd = Math.max(0, player.hurtCd - dt);
-  spawnEvery = Math.max(700, 1600 - (WIN_SECONDS - timeLeft) * 22);
+  spawnEvery = Math.max(820, 2000 - (WIN_SECONDS - timeLeft) * 18);
   spawnAcc += dt;
   while (spawnAcc >= spawnEvery) {
     spawnAcc -= spawnEvery;
     spawnEnemy();
-    if (timeLeft < 25) spawnEnemy();
+    if (timeLeft < 18) spawnEnemy();
   }
 
   if (player.dead) {
@@ -396,43 +396,50 @@ function updatePlay(dt) {
 
 function drawNight() {
   const g = ctx.createLinearGradient(0, 0, 0, canvas.height);
-  g.addColorStop(0, "#0c1020");
-  g.addColorStop(0.45, "#12101c");
-  g.addColorStop(1, "#1a1214");
+  g.addColorStop(0, "#14182c");
+  g.addColorStop(0.42, "#1a1628");
+  g.addColorStop(1, "#241820");
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = "rgba(40, 36, 58, 0.55)";
+  ctx.fillStyle = "rgba(62, 52, 78, 0.7)";
   ctx.beginPath();
-  ctx.ellipse(canvas.width / 2, canvas.height * 0.7, 360, 118, 0, 0, Math.PI * 2);
+  ctx.ellipse(canvas.width / 2, canvas.height * 0.72, 390, 132, 0, 0, Math.PI * 2);
   ctx.fill();
 
-  ctx.strokeStyle = "rgba(90, 70, 80, 0.35)";
+  ctx.strokeStyle = "rgba(168, 120, 110, 0.45)";
   ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.ellipse(canvas.width / 2, canvas.height * 0.7, 300, 92, 0, 0, Math.PI * 2);
+  ctx.ellipse(canvas.width / 2, canvas.height * 0.72, 318, 102, 0, 0, Math.PI * 2);
   ctx.stroke();
 
-  ctx.fillStyle = "rgba(196, 164, 106, 0.18)";
-  for (let i = 0; i < 18; i += 1) {
+  ctx.fillStyle = "rgba(214, 182, 120, 0.28)";
+  for (let i = 0; i < 22; i += 1) {
     const x = 40 + ((i * 97) % (canvas.width - 80));
-    const y = 24 + ((i * 53) % 90);
+    const y = 24 + ((i * 53) % 110);
     ctx.fillRect(x, y, 2, 2);
   }
 }
 
 function drawEnemy(e) {
   ctx.save();
-  ctx.translate(e.x, e.y);
-  ctx.fillStyle = e.hitFlash > 0 ? "#d8d0c0" : "#3a2438";
+  ctx.translate(Math.round(e.x), Math.round(e.y));
+  ctx.fillStyle = "rgba(0, 0, 0, 0.4)";
   ctx.beginPath();
-  ctx.ellipse(0, -10, 12, 16, 0, 0, Math.PI * 2);
+  ctx.ellipse(0, 3, 16, 6, 0, 0, Math.PI * 2);
   ctx.fill();
-  ctx.fillStyle = "#6b1f28";
-  ctx.fillRect(-2, -28, 4, 10);
-  ctx.fillStyle = "#c43b4a";
+  ctx.fillStyle = e.hitFlash > 0 ? "#e8ddd0" : "#8a3140";
   ctx.beginPath();
-  ctx.arc(3, -18, 2.4, 0, Math.PI * 2);
+  ctx.ellipse(0, -18, 15, 20, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "#1c1216";
+  ctx.beginPath();
+  ctx.arc(0, -36, 9, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.fillStyle = "#e24a52";
+  ctx.fillRect(-2, -50, 4, 12);
+  ctx.beginPath();
+  ctx.arc(3, -36, 3, 0, Math.PI * 2);
   ctx.fill();
   ctx.restore();
 }
@@ -479,8 +486,8 @@ function drawWorld() {
 function drawTitleScene() {
   drawNight();
   const x = canvas.width / 2;
-  const y = canvas.height * 0.74;
-  if (titleIdle) drawSprite(currentFrameName(titleIdle), x, y, 2.05);
+  const y = canvas.height * 0.86;
+  if (titleIdle) drawSprite(currentFrameName(titleIdle), x, y, 2.35);
 }
 
 function tick(ts) {
