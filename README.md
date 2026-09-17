@@ -109,17 +109,13 @@ PNG choice: **transparent** in `frames_96/` (and copies in `assets/sprites/expan
 
 ## Discord emoji pack
 
-Upload-ready **animated Discord emojis** (bust / head+crest / Mark close-ups, not tiny full-body silhouettes) live in [`assets/discord-emojis/`](assets/discord-emojis/). Opaque navy `#0b1220`, 128×128 GIF, each well under Discord’s 256 KB cap. Original pixels — do not rebuild these by rescaling the walk2/run/reaction sheets.
-
-```bash
-python3 scripts/make-discord-emojis.py --author
-```
+Upload-ready **static Discord emojis** (36 PNGs sliced from Ryan’s emote sheet) live in [`assets/discord-emojis/`](assets/discord-emojis/). 128×128 nearest-neighbor PNGs with transparent outer corners; each well under Discord’s 256 KB cap. Upload via Server Settings → Emoji. See [`assets/discord-emojis/README.md`](assets/discord-emojis/README.md) for shortcodes.
 
 Gallery: [https://animayer.github.io/Galahad/assets/discord-emojis/](https://animayer.github.io/Galahad/assets/discord-emojis/)
 
 ## Reaction GIF pack
 
-Meme-style **reaction loops** (nod, shrug, facepalm, salute, walk-off, “Hold.”, …) live in [`assets/gifs/reactions/`](assets/gifs/reactions/). Original Galahad poses composited from the legionary pack — not traced from other GIFs. Navy `#0b1220`, 128×128, Discord/X-small. Prefer the [Discord emoji pack](assets/discord-emojis/) for server emoji uploads.
+Meme-style **reaction loops** (nod, shrug, facepalm, salute, walk-off, “Hold.”, …) live in [`assets/gifs/reactions/`](assets/gifs/reactions/). Original Galahad poses composited from the legionary pack — not traced from other GIFs. Navy `#0b1220`, 128×128, Discord/X-small. For server emoji uploads prefer the static [Discord emoji pack](assets/discord-emojis/) (Ryan sheet PNGs).
 
 ```bash
 python3 scripts/make-reaction-gifs.py --author

@@ -14,7 +14,6 @@
       padding: 1.5rem;
     }
     h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
-    h2 { font-size: 1.15rem; margin: 1.75rem 0 0.75rem; }
     .sub { opacity: 0.75; margin-bottom: 1.25rem; max-width: 46rem; }
     .grid {
       display: grid;
@@ -48,27 +47,51 @@
 <body>
   <h1>Galahad · Discord emoji pack</h1>
   <p class="sub">
-    Original bust / crest / Mark close-ups · opaque navy <code>#0b1220</code> · 128×128 GIF ·
+    36 static PNGs from Ryan’s emote sheet · 128×128 · nearest-neighbor ·
     <a href="README.md">upload notes</a> ·
     <a href="https://github.com/Animayer/Galahad/tree/main/assets/discord-emojis">GitHub folder</a> ·
     <a href="../../">Hold the Line</a>
   </p>
-  <p class="sub">Left tile is Discord chat size (48px). Right tile is the upload canvas (128px). Right-click a 128px GIF to save.</p>
+  <p class="sub">Left tile is Discord chat size (48px). Right tile is the upload canvas (128px). Right-click a 128px PNG to save.</p>
   <div class="grid" id="grid"></div>
   <script>
     const beats = [
-      ["galahad_wave.gif", "Wave", ":galahad_wave:"],
-      ["galahad_nod.gif", "Nod", ":galahad_nod:"],
-      ["galahad_shake.gif", "Shake / no", ":galahad_shake:"],
-      ["galahad_shrug.gif", "Shrug", ":galahad_shrug:"],
-      ["galahad_salute.gif", "Salute", ":galahad_salute:"],
-      ["galahad_hold.gif", "Hold.", ":galahad_hold:"],
-      ["galahad_victory.gif", "Victory", ":galahad_victory:"],
-      ["galahad_facepalm.gif", "Facepalm", ":galahad_facepalm:"],
-      ["galahad_think.gif", "Think / confused", ":galahad_think:"],
-      ["galahad_shocked.gif", "Shocked (magenta eye)", ":galahad_shocked:"],
-      ["galahad_laugh.gif", "Dry chuckle", ":galahad_laugh:"],
-      ["galahad_mark.gif", "Mark pulse", ":galahad_mark:"],
+      ["galahad_grin.png", "Grin", ":galahad_grin:"],
+      ["galahad_rage.png", "Rage", ":galahad_rage:"],
+      ["galahad_love.png", "Love", ":galahad_love:"],
+      ["galahad_confused.png", "Confused", ":galahad_confused:"],
+      ["galahad_shocked.png", "Shocked", ":galahad_shocked:"],
+      ["galahad_scared.png", "Scared", ":galahad_scared:"],
+      ["galahad_facepalm.png", "Facepalm", ":galahad_facepalm:"],
+      ["galahad_praying.png", "Praying", ":galahad_praying:"],
+      ["galahad_drunk.png", "Drunk", ":galahad_drunk:"],
+      ["galahad_sick.png", "Sick", ":galahad_sick:"],
+      ["galahad_sunglasses.png", "Sunglasses", ":galahad_sunglasses:"],
+      ["galahad_smug.png", "Smug", ":galahad_smug:"],
+      ["galahad_eating.png", "Eating", ":galahad_eating:"],
+      ["galahad_drinking.png", "Drinking", ":galahad_drinking:"],
+      ["galahad_singing.png", "Singing", ":galahad_singing:"],
+      ["galahad_cheering.png", "Cheering", ":galahad_cheering:"],
+      ["galahad_theatre_mask.png", "Theatre mask", ":galahad_theatre_mask:"],
+      ["galahad_trapped.png", "Trapped", ":galahad_trapped:"],
+      ["galahad_thumbs_up.png", "Thumbs up", ":galahad_thumbs_up:"],
+      ["galahad_thumbs_down.png", "Thumbs down", ":galahad_thumbs_down:"],
+      ["galahad_shrug.png", "Shrug", ":galahad_shrug:"],
+      ["galahad_mini_horse.png", "Mini horse", ":galahad_mini_horse:"],
+      ["galahad_melting.png", "Melting", ":galahad_melting:"],
+      ["galahad_clown.png", "Clown", ":galahad_clown:"],
+      ["galahad_robotic.png", "Robotic", ":galahad_robotic:"],
+      ["galahad_possessed.png", "Possessed", ":galahad_possessed:"],
+      ["galahad_ghostly.png", "Ghostly", ":galahad_ghostly:"],
+      ["galahad_meditating.png", "Meditating", ":galahad_meditating:"],
+      ["galahad_reading.png", "Reading", ":galahad_reading:"],
+      ["galahad_birthday.png", "Birthday", ":galahad_birthday:"],
+      ["galahad_time_travel.png", "Time travel", ":galahad_time_travel:"],
+      ["galahad_teleport.png", "Teleport", ":galahad_teleport:"],
+      ["galahad_pirate.png", "Pirate", ":galahad_pirate:"],
+      ["galahad_flower.png", "Flower", ":galahad_flower:"],
+      ["galahad_fishing.png", "Fishing", ":galahad_fishing:"],
+      ["galahad_exploding.png", "Exploding", ":galahad_exploding:"],
     ];
     const grid = document.getElementById("grid");
     for (const [file, label, shortcode] of beats) {
