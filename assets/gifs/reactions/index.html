@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galahad Reaction GIFs</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; font-family: Georgia, "Times New Roman", serif;
+      background: #0b1220; color: #e8eefc;
+      padding: 1.5rem;
+    }
+    h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+    .sub { opacity: 0.75; margin-bottom: 1.25rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+    figure {
+      margin: 0; background: #121a2b; border: 1px solid #243049;
+      border-radius: 10px; padding: 0.75rem; text-align: center;
+    }
+    img { width: 128px; height: 128px; image-rendering: pixelated; }
+    figcaption { margin-top: 0.5rem; font-size: 0.85rem; }
+    a { color: #8ec7ff; }
+    code { font-size: 0.8rem; opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <h1>Galahad · Reaction GIF pack</h1>
+  <p class="sub">Original meme-style beats · right-click any GIF to save · <a href="https://github.com/Animayer/Galahad/tree/main/assets/gifs/reactions">GitHub folder</a></p>
+  <div class="grid" id="grid"></div>
+  <script>
+    const beats = [
+      ["agree_nod.gif", "Agree nod"],
+      ["disagree_shake.gif", "Disagree shake"],
+      ["shrug.gif", "Shrug"],
+      ["facepalm.gif", "Facepalm"],
+      ["salute_yes.gif", "Salute / yes"],
+      ["point_you.gif", "Point / you"],
+      ["victory_crest.gif", "Victory crest"],
+      ["confused.gif", "Confused"],
+      ["slow_clap.gif", "Slow clap"],
+      ["walk_away.gif", "Walk away"],
+      ["shocked.gif", "Shocked"],
+      ["hold_the_line.gif", "Hold the line"],
+    ];
+    const grid = document.getElementById("grid");
+    for (const [file, label] of beats) {
+      const fig = document.createElement("figure");
+      fig.innerHTML = `<a href="${file}"><img src="${file}" alt="${label}" width="128" height="128" /></a>
+        <figcaption>${label}<br /><code>${file}</code></figcaption>`;
+      grid.appendChild(fig);
+    }
+  </script>
+</body>
+</html>
