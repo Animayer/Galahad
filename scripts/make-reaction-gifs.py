@@ -583,19 +583,32 @@ def author_shocked() -> list[Image.Image]:
 def author_hold_the_line() -> list[Image.Image]:
     idle = load_canon("idle_front")
     braced = load_canon("attack_24")
-    shield = idle_shield_mask(idle)
     dust = load_canon("dust_front_1")
     frames = []
-    # Plant: idle, pull shield in, cut to braced 3/4, pulse, hold.
+    # Idle → repaired block poses (connected sprite, no shield punch).
     frames.append(pose_canvas(idle))
-    planted = shift_layer(idle, shield, -6, 2)
-    frames.append(pose_canvas(planted, dy=1))
-    frames.append(pose_canvas(braced, dy=1))
-    shove = pose_canvas(braced, dy=2, dx=-1)
-    paste_offset(shove, dust, ORIGIN[0] + 20, ORIGIN[1] + 70)
-    frames.append(shove)
-    frames.append(pose_canvas(braced, dy=1))
-    frames.append(pose_canvas(braced, dy=1, dx=0))
+    # Prefer repaired block frames (connected sprite). Fall back to idle.
+    block1 = CANON / "block_1.png"
+    block2 = CANON / "block_2.png"
+    if block1.is_file() and block2.is_file():
+        b1 = load_canon("block_1")
+        b2 = load_canon("block_2")
+        frames.append(pose_canvas(b1, dy=1))
+        frames.append(pose_canvas(b2, dy=1))
+        shove = pose_canvas(b2, dy=2, dx=-1)
+        paste_offset(shove, dust, ORIGIN[0] + 20, ORIGIN[1] + 70)
+        frames.append(shove)
+        frames.append(pose_canvas(b2, dy=1))
+        frames.append(pose_canvas(b1, dy=1))
+    else:
+        planted = idle.copy()
+        frames.append(pose_canvas(planted, dy=1))
+        frames.append(pose_canvas(braced, dy=1))
+        shove = pose_canvas(braced, dy=2, dx=-1)
+        paste_offset(shove, dust, ORIGIN[0] + 20, ORIGIN[1] + 70)
+        frames.append(shove)
+        frames.append(pose_canvas(braced, dy=1))
+        frames.append(pose_canvas(braced, dy=1, dx=0))
     return frames
 
 

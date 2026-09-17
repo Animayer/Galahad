@@ -34,7 +34,7 @@
       ],
       "frameDurationMs": 90,
       "loop": true,
-      "notes": "8-frame front walk. Even slots reuse canon walk_front_*; odd slots are authored in-betweens."
+      "notes": "8-frame front walk. Even slots reuse canon walk_front_*; odd slots are whole-sprite in-betweens (no waist punch)."
     },
     "walk2_back": {
       "frames": [
@@ -49,7 +49,7 @@
       ],
       "frameDurationMs": 90,
       "loop": true,
-      "notes": "8-frame back walk. Distinct drawings, not a flip of front."
+      "notes": "8-frame back walk. Whole-sprite in-betweens; not a flip of front."
     },
     "walk2_left": {
       "frames": [
@@ -64,7 +64,7 @@
       ],
       "frameDurationMs": 90,
       "loop": true,
-      "notes": "8-frame left walk. Authored from walk_left_*; never mirrored from right."
+      "notes": "8-frame left walk. Whole-sprite in-betweens from walk_left_*; never mirrored from right."
     },
     "walk2_right": {
       "frames": [
@@ -79,7 +79,7 @@
       ],
       "frameDurationMs": 90,
       "loop": true,
-      "notes": "8-frame right walk. Authored from walk_right_*; never mirrored from left."
+      "notes": "8-frame right walk. Whole-sprite in-betweens from walk_right_*; never mirrored from left."
     },
     "run_front": {
       "frames": [
@@ -92,7 +92,7 @@
       ],
       "frameDurationMs": 80,
       "loop": true,
-      "notes": "Front dash. Wider stride and bob than walk; dust on contact."
+      "notes": "Front dash. 6 distinct whole-sprite poses (squash/shear/hop + dust). No torso/leg split."
     },
     "run_back": {
       "frames": [
@@ -105,7 +105,7 @@
       ],
       "frameDurationMs": 80,
       "loop": true,
-      "notes": "Back dash from walk_back poses."
+      "notes": "Back dash. 6 distinct whole-sprite poses from walk_back; no torso/leg split."
     },
     "run_left": {
       "frames": [
@@ -118,7 +118,7 @@
       ],
       "frameDurationMs": 80,
       "loop": true,
-      "notes": "Left dash. Distinct side drawing \u2014 spear/shield hands stay put."
+      "notes": "Left dash. 6 distinct poses from walk_left. Spear/shield hands stay put."
     },
     "run_right": {
       "frames": [
@@ -131,7 +131,7 @@
       ],
       "frameDurationMs": 80,
       "loop": true,
-      "notes": "Right dash. Distinct side drawing \u2014 not a flip of run_left."
+      "notes": "Right dash. 6 distinct poses from walk_right \u2014 not a flip of run_left."
     },
     "turn": {
       "frames": [
@@ -153,7 +153,7 @@
       ],
       "frameDurationMs": 110,
       "loop": false,
-      "notes": "Front guard. Shield rises to cover chest and visor."
+      "notes": "Front guard. Shield rises; hip filled; feet planted (no crouch-clip)."
     },
     "thrust": {
       "frames": [
@@ -212,7 +212,7 @@
       ],
       "frameDurationMs": 100,
       "loop": false,
-      "notes": "Anticipation, tucked air, land. 96px canvas hop is modest; 128 GIF lifts the sprite."
+      "notes": "Anticipation squat, tucked air (crest on-canvas), land. Feet planted on ground poses."
     },
     "cheer": {
       "frames": [

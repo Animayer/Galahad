@@ -62,14 +62,30 @@ python3 scripts/make-gifs.py
 
 `make-gifs.py` merges `animations.json` with [`assets/roman_legionary/animations_expanded.json`](assets/roman_legionary/animations_expanded.json). Existing `walk_*` names stay 4 frames so Hold the Line v0.1 is unchanged.
 
+### Locomotion quality pass
+
+Ryan’s movement GIFs had **holes** (waist gaps, clipped crest/feet) and **stutter** (torn in-betweens didn’t read as extra poses). Source PNGs were repaired; GIFs rebuilt. `animations.json` is unchanged.
+
+| Clip | Before (GIF frames / readable poses) | After |
+|---|---|---|
+| `walk_*` (4-dir) | 4 / 4, chroma holes | 4 / 4, enclosed holes filled |
+| `walk2_*` (4-dir) | 8 listed / **~4** readable (odd frames torn at the waist) | 8 / **8 distinct**, connected |
+| `run_*` (4-dir) | 6 listed / **~4** readable (torso punched off the legs) | 6 / **6 distinct**, connected |
+| `attack` | 4 / 4, chroma holes | 4 / 4, hole-filled |
+| `thrust` | 5, feet clipped on crouch | 5, feet planted |
+| `jump` | 5, crest cut off, land clipped | 5, crest on-canvas, squat planted, air hopped |
+| `block` | 4, hip cavity, feet clipped | 4, hip filled, feet planted |
+
+Left/right cycles are still distinct drawings — never mirrored. Rebuild expanded PNGs with `python3 scripts/make-expanded-gifs.py --author`.
+
 ## Expanded sprite vocabulary
 
 New poses (transparent 103×96 PNGs, same canvas as `frames_96/`):
 
 | Clip | Frames | Loop | Notes |
 |---|---|---|---|
-| `walk2_*` (4-dir) | 8 | yes | Canon walk + authored in-betweens; 90 ms |
-| `run_*` (4-dir) | 6 | yes | Dash / bob; left and right are distinct drawings |
+| `walk2_*` (4-dir) | 8 | yes | Canon walk + 4 whole-sprite in-betweens (**8 distinct**); 90 ms |
+| `run_*` (4-dir) | 6 | yes | **6 distinct** squash/shear/hop poses; left and right are not flips |
 | `turn` | 4 | yes | Pivot via canon idles (front→right→back→left) |
 | `block` | 4 | no | Shield up |
 | `thrust` | 5 | no | Front jab; not `attack_21–24` |
