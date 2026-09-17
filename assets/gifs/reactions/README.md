@@ -43,10 +43,10 @@ Authored with `scripts/make-expanded-gifs.py` from the expanded 96px poses. Same
 
 | GIF | Beat | PNG frames | Notes |
 |---|---|---|---|
-| `walk2_front.gif` | 8-frame walk | 8 | Smoother than canon `walk_front` |
-| `run_front.gif` | Front dash | 6 | Bob + dust |
-| `run_left.gif` | Left dash | 6 | From `walk_left_*` |
-| `run_right.gif` | Right dash | 6 | From `walk_right_*` |
+| `walk2_front.gif` | 8-frame walk | 8 | **8 distinct** connected poses (was ~4 readable) |
+| `run_front.gif` | Front dash | 6 | **6 distinct** (was torn torso/leg split) |
+| `run_left.gif` | Left dash | 6 | From `walk_left_*`, not a flip |
+| `run_right.gif` | Right dash | 6 | From `walk_right_*`, not a flip |
 | `block.gif` | Shield up | 4 | Guard |
 | `thrust.gif` | Front spear jab | 5 | Not `attack_21–24` |
 | `cast.gif` | Magenta visor / Mark | 4 | Portrait lore |

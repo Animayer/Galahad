@@ -79,7 +79,9 @@ Anchor is **bottom-center** (`x = feet, y = feet`). That keeps the body planted 
 - Side-walk left/right are distinct drawings, not a flip. Don't mirror them or the shield/spear will swap hands.
 - Attack is a thrust / throw. `projectile_spear` is the airborne spear.
 - `thrust` is a **front-facing** jab (teal spear, different silhouette from `attack_21`–`24`).
-- `walk2_*` keeps the original four walk names and inserts authored in-betweens. Prefer it when you want smoother GIF / later Hold the Line motion.
+- `walk2_*` keeps the original four walk names and inserts **8 distinct** whole-sprite in-betweens (no waist punch). Prefer it when you want smoother GIF / later Hold the Line motion.
+- `run_*` is **6 distinct** poses per direction (squash / shear / hop). Left and right are not flips.
+- Jump plants the crouch/land; airborne frames keep the crest on-canvas.
 - New expanded frames are **transparent** 103×96 PNGs. Spec: `animations_expanded.json`. Rebuild: `python3 scripts/make-expanded-gifs.py --author`.
 - Original sheet numbers (21–30) were punched out of the frames.
 
