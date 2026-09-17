@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galahad Discord emojis</title>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #0b1220;
+      color: #e8eefc;
+      padding: 1.5rem;
+    }
+    h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+    h2 { font-size: 1.15rem; margin: 1.75rem 0 0.75rem; }
+    .sub { opacity: 0.75; margin-bottom: 1.25rem; max-width: 46rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+    figure {
+      margin: 0;
+      background: #121a2b;
+      border: 1px solid #243049;
+      border-radius: 10px;
+      padding: 0.75rem;
+      text-align: center;
+    }
+    .views {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 1rem;
+      min-height: 128px;
+    }
+    img { image-rendering: pixelated; image-rendering: crisp-edges; }
+    .chat { width: 48px; height: 48px; }
+    .full { width: 128px; height: 128px; }
+    figcaption { margin-top: 0.5rem; font-size: 0.85rem; }
+    .sizes { font-size: 0.75rem; opacity: 0.7; margin-top: 0.2rem; }
+    a { color: #8ec7ff; }
+    code { font-size: 0.8rem; opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <h1>Galahad · Discord emoji pack</h1>
+  <p class="sub">
+    Original bust / crest / Mark close-ups · opaque navy <code>#0b1220</code> · 128×128 GIF ·
+    <a href="README.md">upload notes</a> ·
+    <a href="https://github.com/Animayer/Galahad/tree/main/assets/discord-emojis">GitHub folder</a> ·
+    <a href="../../">Hold the Line</a>
+  </p>
+  <p class="sub">Left tile is Discord chat size (48px). Right tile is the upload canvas (128px). Right-click a 128px GIF to save.</p>
+  <div class="grid" id="grid"></div>
+  <script>
+    const beats = [
+      ["galahad_wave.gif", "Wave", ":galahad_wave:"],
+      ["galahad_nod.gif", "Nod", ":galahad_nod:"],
+      ["galahad_shake.gif", "Shake / no", ":galahad_shake:"],
+      ["galahad_shrug.gif", "Shrug", ":galahad_shrug:"],
+      ["galahad_salute.gif", "Salute", ":galahad_salute:"],
+      ["galahad_hold.gif", "Hold.", ":galahad_hold:"],
+      ["galahad_victory.gif", "Victory", ":galahad_victory:"],
+      ["galahad_facepalm.gif", "Facepalm", ":galahad_facepalm:"],
+      ["galahad_think.gif", "Think / confused", ":galahad_think:"],
+      ["galahad_shocked.gif", "Shocked (magenta eye)", ":galahad_shocked:"],
+      ["galahad_laugh.gif", "Dry chuckle", ":galahad_laugh:"],
+      ["galahad_mark.gif", "Mark pulse", ":galahad_mark:"],
+    ];
+    const grid = document.getElementById("grid");
+    for (const [file, label, shortcode] of beats) {
+      const fig = document.createElement("figure");
+      fig.innerHTML = `
+        <div class="views">
+          <a href="${file}"><img class="chat" src="${file}" alt="${label} at 48px" width="48" height="48" /></a>
+          <a href="${file}"><img class="full" src="${file}" alt="${label}" width="128" height="128" /></a>
+        </div>
+        <figcaption>${label}<br /><code>${shortcode}</code><br /><code>${file}</code></figcaption>
+        <div class="sizes">48px chat · 128px upload</div>`;
+      grid.appendChild(fig);
+    }
+  </script>
+</body>
+</html>
