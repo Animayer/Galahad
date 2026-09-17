@@ -51,3 +51,11 @@ Canon sprites live in `assets/roman_legionary/`:
 - `animations.json` — frame lists, timings, loop flags, bottom-center anchor
 
 Do not flip left/right walk frames. Shield and spear stay in their drawn hands.
+
+## GIF pack
+
+Preview GIFs of those same canon clips live in [`assets/gifs/`](assets/gifs/) (idle / walk 4-dir, attack, hurt, death, corpse). Dark navy background, timings from `animations.json`. Rebuild with:
+
+```bash
+python3 scripts/make-gifs.py
+```
