@@ -30,8 +30,12 @@
 </head>
 <body>
   <h1>Galahad · Reaction GIF pack</h1>
-  <p class="sub">Original meme-style beats · right-click any GIF to save · <a href="https://github.com/Animayer/Galahad/tree/main/assets/gifs/reactions">GitHub folder</a></p>
+  <p class="sub">Original meme-style beats · right-click any GIF to save · <a href="https://github.com/Animayer/Galahad/tree/main/assets/gifs/reactions">GitHub folder</a> · <a href="../">All GIF packs</a></p>
+  <h2 style="font-size:1.15rem;margin:1.5rem 0 0.75rem;">Reactions</h2>
   <div class="grid" id="grid"></div>
+  <h2 style="font-size:1.15rem;margin:1.75rem 0 0.75rem;">Expanded actions</h2>
+  <p class="sub">Run, block, thrust, oath flash, jump, 8-frame walk. Same 128×128 navy canvas. Left/right runs are distinct drawings — not flips.</p>
+  <div class="grid" id="actions"></div>
   <script>
     const beats = [
       ["agree_nod.gif", "Agree nod"],
@@ -47,13 +51,31 @@
       ["shocked.gif", "Shocked"],
       ["hold_the_line.gif", "Hold the line"],
     ];
-    const grid = document.getElementById("grid");
-    for (const [file, label] of beats) {
-      const fig = document.createElement("figure");
-      fig.innerHTML = `<a href="${file}"><img src="${file}" alt="${label}" width="128" height="128" /></a>
-        <figcaption>${label}<br /><code>${file}</code></figcaption>`;
-      grid.appendChild(fig);
+    const actions = [
+      ["walk2_front.gif", "Walk 8-frame"],
+      ["run_front.gif", "Run front"],
+      ["run_left.gif", "Run left"],
+      ["run_right.gif", "Run right"],
+      ["block.gif", "Block / guard"],
+      ["thrust.gif", "Front thrust"],
+      ["cast.gif", "Oath flash"],
+      ["jump.gif", "Leap"],
+      ["wave.gif", "Beckon"],
+      ["kneel.gif", "Brace"],
+      ["cheer.gif", "Cheer"],
+      ["turn.gif", "Pivot"],
+    ];
+    function fill(id, items) {
+      const grid = document.getElementById(id);
+      for (const [file, label] of items) {
+        const fig = document.createElement("figure");
+        fig.innerHTML = `<a href="${file}"><img src="${file}" alt="${label}" width="128" height="128" /></a>
+          <figcaption>${label}<br /><code>${file}</code></figcaption>`;
+        grid.appendChild(fig);
+      }
     }
+    fill("grid", beats);
+    fill("actions", actions);
   </script>
 </body>
 </html>

@@ -1,0 +1,230 @@
+{
+  "name": "roman_legionary_expanded",
+  "parent": "animations.json",
+  "source": "Authored from canon frames_96 poses; original Galahad pixels only.",
+  "canvas": {
+    "w": 103,
+    "h": 96
+  },
+  "anchor": {
+    "x": 0.5,
+    "y": 1.0
+  },
+  "background": {
+    "png": "transparent",
+    "gif": "#0b1220",
+    "notes": "New frames are transparent 103\u00d796 PNGs, same as the canon pack, so Hold the Line can load them later. GIFs composite onto opaque navy #0b1220 (GIF only has 1-bit transparency)."
+  },
+  "rules": [
+    "Do not flip left/right cycles. Shield and spear stay in drawn hands.",
+    "Pixel-crisp: nearest-neighbor translations and overlays, no blur/resize.",
+    "Existing walk_* / attack / idle names are unchanged."
+  ],
+  "animations": {
+    "walk2_front": {
+      "frames": [
+        "walk_front_0",
+        "walk2_front_1",
+        "walk_front_1",
+        "walk2_front_3",
+        "walk_front_2",
+        "walk2_front_5",
+        "walk_front_3",
+        "walk2_front_7"
+      ],
+      "frameDurationMs": 90,
+      "loop": true,
+      "notes": "8-frame front walk. Even slots reuse canon walk_front_*; odd slots are authored in-betweens."
+    },
+    "walk2_back": {
+      "frames": [
+        "walk_back_0",
+        "walk2_back_1",
+        "walk_back_1",
+        "walk2_back_3",
+        "walk_back_2",
+        "walk2_back_5",
+        "walk_back_3",
+        "walk2_back_7"
+      ],
+      "frameDurationMs": 90,
+      "loop": true,
+      "notes": "8-frame back walk. Distinct drawings, not a flip of front."
+    },
+    "walk2_left": {
+      "frames": [
+        "walk_left_0",
+        "walk2_left_1",
+        "walk_left_1",
+        "walk2_left_3",
+        "walk_left_2",
+        "walk2_left_5",
+        "walk_left_3",
+        "walk2_left_7"
+      ],
+      "frameDurationMs": 90,
+      "loop": true,
+      "notes": "8-frame left walk. Authored from walk_left_*; never mirrored from right."
+    },
+    "walk2_right": {
+      "frames": [
+        "walk_right_0",
+        "walk2_right_1",
+        "walk_right_1",
+        "walk2_right_3",
+        "walk_right_2",
+        "walk2_right_5",
+        "walk_right_3",
+        "walk2_right_7"
+      ],
+      "frameDurationMs": 90,
+      "loop": true,
+      "notes": "8-frame right walk. Authored from walk_right_*; never mirrored from left."
+    },
+    "run_front": {
+      "frames": [
+        "run_front_0",
+        "run_front_1",
+        "run_front_2",
+        "run_front_3",
+        "run_front_4",
+        "run_front_5"
+      ],
+      "frameDurationMs": 80,
+      "loop": true,
+      "notes": "Front dash. Wider stride and bob than walk; dust on contact."
+    },
+    "run_back": {
+      "frames": [
+        "run_back_0",
+        "run_back_1",
+        "run_back_2",
+        "run_back_3",
+        "run_back_4",
+        "run_back_5"
+      ],
+      "frameDurationMs": 80,
+      "loop": true,
+      "notes": "Back dash from walk_back poses."
+    },
+    "run_left": {
+      "frames": [
+        "run_left_0",
+        "run_left_1",
+        "run_left_2",
+        "run_left_3",
+        "run_left_4",
+        "run_left_5"
+      ],
+      "frameDurationMs": 80,
+      "loop": true,
+      "notes": "Left dash. Distinct side drawing \u2014 spear/shield hands stay put."
+    },
+    "run_right": {
+      "frames": [
+        "run_right_0",
+        "run_right_1",
+        "run_right_2",
+        "run_right_3",
+        "run_right_4",
+        "run_right_5"
+      ],
+      "frameDurationMs": 80,
+      "loop": true,
+      "notes": "Right dash. Distinct side drawing \u2014 not a flip of run_left."
+    },
+    "turn": {
+      "frames": [
+        "idle_front",
+        "idle_right",
+        "idle_back",
+        "idle_left"
+      ],
+      "frameDurationMs": 160,
+      "loop": true,
+      "notes": "Pivot using canon idle drawings (front\u2192right\u2192back\u2192left). No mirrored 3/4."
+    },
+    "block": {
+      "frames": [
+        "block_0",
+        "block_1",
+        "block_2",
+        "block_3"
+      ],
+      "frameDurationMs": 110,
+      "loop": false,
+      "notes": "Front guard. Shield rises to cover chest and visor."
+    },
+    "thrust": {
+      "frames": [
+        "thrust_0",
+        "thrust_1",
+        "thrust_2",
+        "thrust_3",
+        "thrust_4"
+      ],
+      "frameDurationMs": 90,
+      "loop": false,
+      "notes": "Front spear thrust. Different silhouette from attack_21\u201324 (3/4 side)."
+    },
+    "cast": {
+      "frames": [
+        "cast_0",
+        "cast_1",
+        "cast_2",
+        "cast_3"
+      ],
+      "frameDurationMs": 110,
+      "loop": false,
+      "notes": "Oath flash \u2014 magenta visor / Mark glow from the portrait lore."
+    },
+    "kneel": {
+      "frames": [
+        "kneel_0",
+        "kneel_1",
+        "kneel_2",
+        "kneel_3"
+      ],
+      "frameDurationMs": 130,
+      "loop": false,
+      "notes": "Brace / kneel. Feet planted (bottom-center anchor); torso compresses down."
+    },
+    "wave": {
+      "frames": [
+        "wave_0",
+        "wave_1",
+        "wave_2",
+        "wave_3",
+        "wave_4",
+        "wave_5"
+      ],
+      "frameDurationMs": 130,
+      "loop": true,
+      "notes": "Beckon. Spear grounded off, gauntlet waves."
+    },
+    "jump": {
+      "frames": [
+        "jump_0",
+        "jump_1",
+        "jump_2",
+        "jump_3",
+        "jump_4"
+      ],
+      "frameDurationMs": 100,
+      "loop": false,
+      "notes": "Anticipation, tucked air, land. 96px canvas hop is modest; 128 GIF lifts the sprite."
+    },
+    "cheer": {
+      "frames": [
+        "cheer_0",
+        "cheer_1",
+        "cheer_2",
+        "cheer_3",
+        "cheer_4"
+      ],
+      "frameDurationMs": 120,
+      "loop": true,
+      "notes": "Camp energy: hop + spear present-arms."
+    }
+  }
+}

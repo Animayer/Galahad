@@ -36,3 +36,29 @@ Pillow may coalesce consecutive identical hold frames when writing the GIF; the 
 | `walk_away.gif` | Turns, walks off stage right | 8 | 220, 140, 140, 120, 120, 120, 120, 160 | We're done here. |
 | `shocked.gif` | Recoil + magenta visor flash | 6 | 120, 80, 80, 220, 160, 180 | The line— what. |
 | `hold_the_line.gif` | Braced shield. “Hold.” | 6 | 180, 160, 280, 200, 180, 200 | Hold. |
+
+## Expanded action loops (128×128)
+
+Authored with `scripts/make-expanded-gifs.py` from the expanded 96px poses. Same navy canvas as the reaction pack. All of these **loop**. Left/right runs are distinct drawings — not flips.
+
+| GIF | Beat | PNG frames | Notes |
+|---|---|---|---|
+| `walk2_front.gif` | 8-frame walk | 8 | Smoother than canon `walk_front` |
+| `run_front.gif` | Front dash | 6 | Bob + dust |
+| `run_left.gif` | Left dash | 6 | From `walk_left_*` |
+| `run_right.gif` | Right dash | 6 | From `walk_right_*` |
+| `block.gif` | Shield up | 4 | Guard |
+| `thrust.gif` | Front spear jab | 5 | Not `attack_21–24` |
+| `cast.gif` | Magenta visor / Mark | 4 | Portrait lore |
+| `jump.gif` | Leap | 5 | Extra hop on this 128 canvas |
+| `wave.gif` | Beckon | 6 | Non-combat |
+| `kneel.gif` | Brace | 4 | Low stance |
+| `cheer.gif` | Spear high hop | 5 | Camp energy |
+| `turn.gif` | Pivot | 4 | Canon idles, no mirrored 3/4 |
+
+Rebuild action loops (and the 96px GIFs) with:
+
+```bash
+python3 scripts/make-expanded-gifs.py --author
+```
+

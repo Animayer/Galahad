@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Rebuild the Galahad GIF pack from canon roman_legionary frames.
+"""Rebuild the Galahad GIF pack from roman_legionary frames.
 
 Reads frame lists, timings, and loop flags from
-``assets/roman_legionary/animations.json`` and PNG frames from
-``assets/roman_legionary/frames_96/``. Does not invent, flip, or
-resample art. Left/right walks stay as drawn.
+``assets/roman_legionary/animations.json`` plus
+``animations_expanded.json`` (merged; expanded keys must not collide).
+PNG frames come from ``assets/roman_legionary/frames_96/``.
+Does not flip or resample art. Left/right walks stay as drawn.
 
 Usage:
     python3 scripts/make-gifs.py
@@ -87,6 +88,15 @@ def write_gif(
 def build() -> None:
     spec = json.loads(ANIM_PATH.read_text(encoding="utf-8"))
     animations = spec.get("animations") or {}
+    expanded_path = PACK / "animations_expanded.json"
+    if expanded_path.is_file():
+        extra = json.loads(expanded_path.read_text(encoding="utf-8"))
+        extra_anims = extra.get("animations") or {}
+        overlap = set(animations) & set(extra_anims)
+        if overlap:
+            raise SystemExit(f"Expanded spec redefines canon keys: {sorted(overlap)}")
+        animations = {**animations, **extra_anims}
+        print(f"Merged:       {expanded_path.name} ({len(extra_anims)} clips)")
     if not animations:
         raise SystemExit(f"No animations in {ANIM_PATH}")
 
@@ -113,7 +123,7 @@ def build() -> None:
         if dest.stat().st_size > 200 * 1024:
             print(f"    warning: {dest.name} exceeds 200 KB", file=sys.stderr)
 
-    print("\nDone. Canon frames only; no mirroring or resampling.")
+    print("\nDone. No mirroring or resampling. Expanded clips come from animations_expanded.json.")
 
 
 if __name__ == "__main__":

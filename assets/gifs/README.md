@@ -34,4 +34,8 @@ The script refuses to resample or flip frames. Missing canon PNGs fail the build
 
 Canvas is the 96px-tall pack (103×96). Target size is well under 200 KB each.
 
-Non-looping clips (`attack`, `hurt`, `death`) write Netscape loop count `1` (play once, then hold in viewers that honor it). Looping clips use `0` (infinite).
+Expanded motion clips (`walk2_*`, `run_*`, `turn`, `block`, `thrust`, `cast`, `kneel`, `wave`, `jump`, `cheer`) are listed in `assets/roman_legionary/animations_expanded.json` and written into this folder by `scripts/make-gifs.py` (merged spec) or `scripts/make-expanded-gifs.py`. Canon `walk_*` GIFs stay 4 frames.
+
+128×128 looping showcase versions of the new actions also live in [`reactions/`](reactions/).
+
+Non-looping clips (`attack`, `hurt`, `death`, `block`, `thrust`, `cast`, `kneel`, `jump`) write Netscape loop count `1` (play once, then hold in viewers that honor it). Looping clips use `0` (infinite).

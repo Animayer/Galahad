@@ -5,17 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Galahad GIF packs</title>
   <style>
-    body { margin: 0; font-family: Georgia, serif; background: #0b1220; color: #e8eefc; padding: 1.5rem; }
+    :root { color-scheme: dark; }
+    body {
+      margin: 0; font-family: Georgia, "Times New Roman", serif;
+      background: #0b1220; color: #e8eefc; padding: 1.5rem;
+    }
+    h1 { font-size: 1.6rem; margin: 0 0 0.25rem; }
+    h2 { font-size: 1.15rem; margin: 1.75rem 0 0.75rem; }
+    .sub { opacity: 0.75; margin-bottom: 1.25rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    figure {
+      margin: 0; background: #121a2b; border: 1px solid #243049;
+      border-radius: 10px; padding: 0.75rem; text-align: center;
+    }
+    img { image-rendering: pixelated; image-rendering: crisp-edges; }
+    figcaption { margin-top: 0.5rem; font-size: 0.85rem; }
     a { color: #8ec7ff; }
-    ul { line-height: 1.8; }
+    code { font-size: 0.8rem; opacity: 0.85; }
   </style>
 </head>
 <body>
-  <h1>Galahad GIF packs</h1>
-  <ul>
-    <li><a href="reactions/">Reaction GIFs</a> (meme-style beats)</li>
-    <li><a href="https://github.com/Animayer/Galahad/tree/main/assets/gifs">All animation GIFs on GitHub</a> (walk / attack / idle)</li>
-    <li><a href="../">Hold the Line game</a></li>
-  </ul>
+  <h1>Galahad · GIF packs</h1>
+  <p class="sub">
+    Navy <code>#0b1220</code> · 96px canon + expanded motion ·
+    <a href="reactions/">Reaction / action loops (128×128)</a> ·
+    <a href="../../">Hold the Line</a>
+  </p>
+
+  <h2>Expanded motion</h2>
+  <div class="grid" id="expanded"></div>
+  <h2>Canon pack</h2>
+  <div class="grid" id="canon"></div>
+  <script>
+    const expanded = [
+      ["walk2_front.gif", "Walk 8-frame front"],
+      ["walk2_back.gif", "Walk 8-frame back"],
+      ["walk2_left.gif", "Walk 8-frame left"],
+      ["walk2_right.gif", "Walk 8-frame right"],
+      ["run_front.gif", "Run front"],
+      ["run_back.gif", "Run back"],
+      ["run_left.gif", "Run left"],
+      ["run_right.gif", "Run right"],
+      ["turn.gif", "Pivot"],
+      ["block.gif", "Block / guard"],
+      ["thrust.gif", "Front thrust"],
+      ["cast.gif", "Oath flash"],
+      ["kneel.gif", "Kneel / brace"],
+      ["wave.gif", "Wave / beckon"],
+      ["jump.gif", "Jump / leap"],
+      ["cheer.gif", "Cheer"],
+    ];
+    const canon = [
+      ["idle_front.gif", "Idle front"],
+      ["idle_back.gif", "Idle back"],
+      ["idle_left.gif", "Idle left"],
+      ["idle_right.gif", "Idle right"],
+      ["walk_front.gif", "Walk front (4)"],
+      ["walk_back.gif", "Walk back (4)"],
+      ["walk_left.gif", "Walk left (4)"],
+      ["walk_right.gif", "Walk right (4)"],
+      ["attack.gif", "Attack"],
+      ["hurt.gif", "Hurt"],
+      ["death.gif", "Death"],
+      ["corpse.gif", "Corpse"],
+    ];
+    function fill(id, items) {
+      const grid = document.getElementById(id);
+      for (const [file, label] of items) {
+        const fig = document.createElement("figure");
+        fig.innerHTML = `<a href="${file}"><img src="${file}" alt="${label}" width="103" height="96" /></a>
+          <figcaption>${label}<br /><code>${file}</code></figcaption>`;
+        grid.appendChild(fig);
+      }
+    }
+    fill("expanded", expanded);
+    fill("canon", canon);
+  </script>
 </body>
 </html>

@@ -54,11 +54,38 @@ Do not flip left/right walk frames. Shield and spear stay in their drawn hands.
 
 ## GIF pack
 
-Preview GIFs of those same canon clips live in [`assets/gifs/`](assets/gifs/) (idle / walk 4-dir, attack, hurt, death, corpse). Dark navy background, timings from `animations.json`. Rebuild with:
+Preview GIFs of canon and expanded clips live in [`assets/gifs/`](assets/gifs/) (idle / 4-frame walk, **8-frame walk2**, **run 4-dir**, block, thrust, cast, jump, …). Dark navy background. Rebuild with:
 
 ```bash
 python3 scripts/make-gifs.py
 ```
+
+`make-gifs.py` merges `animations.json` with [`assets/roman_legionary/animations_expanded.json`](assets/roman_legionary/animations_expanded.json). Existing `walk_*` names stay 4 frames so Hold the Line v0.1 is unchanged.
+
+## Expanded sprite vocabulary
+
+New poses (transparent 103×96 PNGs, same canvas as `frames_96/`):
+
+| Clip | Frames | Loop | Notes |
+|---|---|---|---|
+| `walk2_*` (4-dir) | 8 | yes | Canon walk + authored in-betweens; 90 ms |
+| `run_*` (4-dir) | 6 | yes | Dash / bob; left and right are distinct drawings |
+| `turn` | 4 | yes | Pivot via canon idles (front→right→back→left) |
+| `block` | 4 | no | Shield up |
+| `thrust` | 5 | no | Front jab; not `attack_21–24` |
+| `cast` | 4 | no | Magenta visor / Mark glow |
+| `kneel` | 4 | no | Low brace |
+| `wave` | 6 | yes | Beckon |
+| `jump` | 5 | no | Crouch, tucked air, land |
+| `cheer` | 5 | yes | Hop + spear present-arms |
+
+Author PNGs and 128×128 showcase loops:
+
+```bash
+python3 scripts/make-expanded-gifs.py --author
+```
+
+PNG choice: **transparent** in `frames_96/` (and copies in `assets/sprites/expanded/`). GIFs composite onto opaque navy `#0b1220`. Do not flip side cycles.
 
 ## Reaction GIF pack
 

@@ -33,7 +33,17 @@ Hi-res source: **`frames_normalized/`** (344×320 canvas, feet planted).
 |---|---|---|---|
 | idle_front / back / left / right | 1 | yes | 400 |
 | walk_front / back / left / right | 4 | yes | 120 |
+| walk2_front / back / left / right | 8 | yes | 90 |
+| run_front / back / left / right | 6 | yes | 80 |
+| turn | 4 | yes | 160 |
 | attack | 4 (`attack_21`–`24`) | no | 90 |
+| thrust | 5 | no | 90 |
+| block | 4 | no | 110 |
+| cast | 4 | no | 110 |
+| kneel | 4 | no | 130 |
+| wave | 6 | yes | 130 |
+| jump | 5 | no | 100 |
+| cheer | 5 | yes | 120 |
 | hurt | 2 | no | 140 |
 | death | 3 | no | 160 |
 | corpse | 2 | yes | 800 |
@@ -68,6 +78,9 @@ Anchor is **bottom-center** (`x = feet, y = feet`). That keeps the body planted 
 - Walk cycles are 4 frames and fairly close together — Gemini drew a reference sheet, not a production cycle. Fine for a prototype; swap later if you want more smear.
 - Side-walk left/right are distinct drawings, not a flip. Don't mirror them or the shield/spear will swap hands.
 - Attack is a thrust / throw. `projectile_spear` is the airborne spear.
+- `thrust` is a **front-facing** jab (teal spear, different silhouette from `attack_21`–`24`).
+- `walk2_*` keeps the original four walk names and inserts authored in-betweens. Prefer it when you want smoother GIF / later Hold the Line motion.
+- New expanded frames are **transparent** 103×96 PNGs. Spec: `animations_expanded.json`. Rebuild: `python3 scripts/make-expanded-gifs.py --author`.
 - Original sheet numbers (21–30) were punched out of the frames.
 
 ## License / source
