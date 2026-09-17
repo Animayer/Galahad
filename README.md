@@ -59,3 +59,11 @@ Preview GIFs of those same canon clips live in [`assets/gifs/`](assets/gifs/) (i
 ```bash
 python3 scripts/make-gifs.py
 ```
+
+## Reaction GIF pack
+
+Meme-style **reaction loops** (nod, shrug, facepalm, salute, walk-off, “Hold.”, …) live in [`assets/gifs/reactions/`](assets/gifs/reactions/). Original Galahad poses composited from the legionary pack — not traced from other GIFs. Navy `#0b1220`, 128×128, Discord/X-small.
+
+```bash
+python3 scripts/make-reaction-gifs.py --author
+```
