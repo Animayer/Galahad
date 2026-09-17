@@ -39,6 +39,10 @@ The project URL will be:
 
 `https://<user-or-org>.github.io/Galahad/`
 
+On this repo that is [https://animayer.github.io/Galahad/](https://animayer.github.io/Galahad/). Discord emoji gallery:
+
+`https://animayer.github.io/Galahad/assets/discord-emojis/`
+
 Optional: switch Source to **GitHub Actions** and use `.github/workflows/pages.yml` (same files, no build step).
 
 Asset paths are relative, so the game works at the repo root or under that `/Galahad/` project path.
@@ -87,9 +91,19 @@ python3 scripts/make-expanded-gifs.py --author
 
 PNG choice: **transparent** in `frames_96/` (and copies in `assets/sprites/expanded/`). GIFs composite onto opaque navy `#0b1220`. Do not flip side cycles.
 
+## Discord emoji pack
+
+Upload-ready **animated Discord emojis** (bust / head+crest / Mark close-ups, not tiny full-body silhouettes) live in [`assets/discord-emojis/`](assets/discord-emojis/). Opaque navy `#0b1220`, 128×128 GIF, each well under Discord’s 256 KB cap. Original pixels — do not rebuild these by rescaling the walk2/run/reaction sheets.
+
+```bash
+python3 scripts/make-discord-emojis.py --author
+```
+
+Gallery: [https://animayer.github.io/Galahad/assets/discord-emojis/](https://animayer.github.io/Galahad/assets/discord-emojis/)
+
 ## Reaction GIF pack
 
-Meme-style **reaction loops** (nod, shrug, facepalm, salute, walk-off, “Hold.”, …) live in [`assets/gifs/reactions/`](assets/gifs/reactions/). Original Galahad poses composited from the legionary pack — not traced from other GIFs. Navy `#0b1220`, 128×128, Discord/X-small.
+Meme-style **reaction loops** (nod, shrug, facepalm, salute, walk-off, “Hold.”, …) live in [`assets/gifs/reactions/`](assets/gifs/reactions/). Original Galahad poses composited from the legionary pack — not traced from other GIFs. Navy `#0b1220`, 128×128, Discord/X-small. Prefer the [Discord emoji pack](assets/discord-emojis/) for server emoji uploads.
 
 ```bash
 python3 scripts/make-reaction-gifs.py --author
