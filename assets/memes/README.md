@@ -8,6 +8,8 @@ Do **not** regenerate, redraw, restyle, recolor, upscale-with-AI, or “improve�
 
 This folder is **composites only**: existing PNGs + text captions + simple layout chrome (navy panels, arrows, labels). Pixel art is resized nearest-neighbor. Background is navy `#0b1220`.
 
+Every source is composited onto opaque navy `#0b1220` (or the panel already on the canvas). Discord-tile checker / muted sheet-fill is knocked out from the transparent corners so alpha never becomes checker in the final RGB PNG. In-tile NANI/BOOM/COOL blobs are dropped so they are never reused as captions. Captions live only in top/bottom (or per-row) navy bars — never on the bust.
+
 ## Source assets (repo paths — do not invent)
 
 | Use | Path |
@@ -37,10 +39,10 @@ Gallery: [https://animayer.github.io/Galahad/assets/memes/](https://animayer.git
 
 1. Drake — thumbs down / thumbs up (B uses hold-the-line still)
 2. Distracted boyfriend — rage / grin / smug (oath triangle)
-3. This is fine — meditating or drinking on exploding tiles
+3. This is fine — meditating or drinking bust on exploding tiles (BOOM text cropped)
 4. Expanding brain — confused → reading → praying → smug
 5. Woman yelling / cat — rage vs shrug or facepalm
-6. Waiting — trapped or ghostly
+6. Waiting — reading or shrug (trapped/ghostly skipped: in-tile text + fill knockout eats the bust)
 7. Change my mind — sunglasses or smug + Mark crop
 8. Understatement punch — exploding → grin or victory crest
 9. Trade offer — thumbs up vs cheering or block
