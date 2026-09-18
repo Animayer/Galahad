@@ -120,3 +120,13 @@ Meme-style **reaction loops** (nod, shrug, facepalm, salute, walk-off, “Hold.�
 ```bash
 python3 scripts/make-reaction-gifs.py --author
 ```
+
+## Meme pack
+
+Square **composites** (1080×1080) of existing Discord emotes + reaction stills + captions live in [`assets/memes/`](assets/memes/). No new character art — look-unchanged rule in that README. Rebuild with:
+
+```bash
+python3 scripts/make-galahad-memes.py
+```
+
+Gallery: [https://animayer.github.io/Galahad/assets/memes/](https://animayer.github.io/Galahad/assets/memes/)
